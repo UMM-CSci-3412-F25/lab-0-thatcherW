@@ -12,7 +12,7 @@ cd "$dest_dir" || exit 1
 cd "NthPrime" || exit 1
 #ls
 #echo ""
-gcc *.c -o NthPrime
+gcc ./*.c -o NthPrime
 #ls
 
 ./NthPrime "$num"
