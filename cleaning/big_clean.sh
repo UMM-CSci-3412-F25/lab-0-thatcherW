@@ -21,7 +21,7 @@ grep -rl "DELETE ME!" "$SCRATCH/$top_dir" | xargs rm
 #echo "Files deleted"
 #ls
 
-tar -czf "$here/cleaned_$dirname.tgz" -C "$SCRATCH" "$top_dir"
+tar -czf "$home/cleaned_$dirname.tgz" -C "$SCRATCH" "$top_dir"
 cd "$home" || exit
 #ls
 #tar -ztf cleaned_little_dir.tgz
