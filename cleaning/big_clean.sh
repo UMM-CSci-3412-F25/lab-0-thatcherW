@@ -6,23 +6,23 @@ SCRATCH=$(mktemp -d)
 top_dir=$(tar -tzf "$tar_file" | head -1 | cut -d/ -f1)
 tar -zxf "$tar_file" --directory="$SCRATCH"
 
-here=$(pwd)
+home=$(pwd)
 cd "$SCRATCH" || exit
 #ls
 cd "$top_dir" || exit
-ls
+#ls
 dirname=$(basename "$top_dir")
 
-echo ""
-echo "Beginning deletion"
+#echo ""
+#echo "Beginning deletion"
 grep -rl "DELETE ME!" "$SCRATCH/$top_dir" | xargs rm
 
-echo ""
-echo "Files deleted"
-ls
+#echo ""
+#echo "Files deleted"
+#ls
 
 tar -czf "$here/cleaned_$dirname.tgz" -C "$SCRATCH" "$top_dir"
-cd "$here" || exit
+cd "$home" || exit
 #ls
-tar -ztf cleaned_little_dir.tgz
+#tar -ztf cleaned_little_dir.tgz
 

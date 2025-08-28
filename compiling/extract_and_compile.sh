@@ -3,20 +3,20 @@
 num="$1"
 dest_dir="./NthPrime"
 mkdir -p "$dest_dir"
+home=$(pwd)
 
 tar -xzf NthPrime.tgz -C "$dest_dir"
-ls
+#ls
 cd "$dest_dir" || exit 1
-ls
+#ls
 cd "NthPrime" || exit 1
-ls
-echo ""
+#ls
+#echo ""
 gcc *.c -o NthPrime
 #ls
 
 ./NthPrime "$num"
 
-cd ../
-cd ../
+cd "$home" || exit 1
 rm -rf "NthPrime"
 #ls
